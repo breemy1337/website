@@ -6,4 +6,5 @@ app_name = 'posts'
 urlpatterns = [
     # Главная страница
     path('', views.index, name='index'),
+    path('<int:id>/', views.post_id),
 ]
