@@ -1,4 +1,9 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
+
 
 class Posts(models.Model):
     location = models.CharField(
@@ -19,4 +24,11 @@ class Posts(models.Model):
     text = models.TextField(
         verbose_name='текст',
         help_text='здесь вы можете написать свой текст'
+    )
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="posts",
+        verbose_name='автор',
+        help_text='отображает имя автора'
     )
