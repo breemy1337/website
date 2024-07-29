@@ -32,3 +32,30 @@ class Posts(models.Model):
         verbose_name='автор',
         help_text='отображает имя автора'
     )
+    groups = models.ForeignKey(
+        'Groups',
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='posts',
+        verbose_name='Группы',
+        help_text='Здесь будут ваши группы'
+    )
+
+
+class Groups(models.Model):
+    title=models.CharField(
+        max_length=200,
+        verbose_name='Название группы',
+        help_text='Здесь будет название вашей группы'
+    )
+    slug=models.SlugField(
+        unique=True,
+        verbose_name='Уникальный адресс',
+        help_text='Здесь будет уникальный адресс'
+    )
+    description=models.TextField(
+        verbose_name='Описание',
+        help_text='Здесь будет описание'
+    )
+
