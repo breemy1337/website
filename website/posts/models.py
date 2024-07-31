@@ -58,4 +58,6 @@ class Groups(models.Model):
         verbose_name='Описание',
         help_text='Здесь будет описание'
     )
+    def __str__(self):
+        return self.title
 
