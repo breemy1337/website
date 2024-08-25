@@ -44,20 +44,20 @@ class Posts(models.Model):
 
 
 class Groups(models.Model):
-    title=models.CharField(
+    title = models.CharField(
         max_length=200,
         verbose_name='Название группы',
         help_text='Здесь будет название вашей группы'
     )
-    slug=models.SlugField(
+    slug = models.SlugField(
         unique=True,
-        verbose_name='Уникальный адресс',
-        help_text='Здесь будет уникальный адресс'
+        verbose_name='Уникальный адрес',
+        help_text='Здесь будет уникальный адрес'
     )
-    description=models.TextField(
+    description = models.TextField(
         verbose_name='Описание',
         help_text='Здесь будет описание'
     )
+
     def __str__(self):
         return self.title
-

@@ -4,9 +4,9 @@
   </a>
 
   <ul class="nav nav-pills">
-    <li class="nav-item"><a href="{% url 'posts:index' %}" class="nav-link active" aria-current="page">Главная</a></li>
+    <li class="nav-item"><a href="{% url 'users:login' %}" class="nav-link active" aria-current="page">Войти</a></li>
     <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
     <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+    <li class="nav-item"><a href="{% url 'about:author' %}" class="nav-link">Author</a></li>
+    <li class="nav-item"><a href="{% url 'about:tech' %}" class="nav-link">Tech</a></li>
   </ul>
