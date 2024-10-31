@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 
 
-from .models import Posts, Groups
+from .models import Posts, Groups, User
 
 
 def index(request):
@@ -21,3 +21,21 @@ def group_post(request, slug):
         'posts': posts
     }
     return render(request, 'posts/group_list.html', context=context)
+
+
+def post_detail(request, post_id):
+    post = get_object_or_404(Posts, pk=post_id)
+    context = {
+            'post': post
+        }
+    return render(request, 'posts/post_detail.html', context=context)
+
+
+def profile(request, username):
+    author = get_object_or_404(User, username=username)
+    posts = author.posts.select_related('groups')
+    context = {
+        'posts': posts,
+        'author': author
+    }
+    return render(request, 'posts/profile.html', context=context)

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'posts',
     'about',
     'users',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'posts:index'
+
+LOGIN_URL = 'users:login'
